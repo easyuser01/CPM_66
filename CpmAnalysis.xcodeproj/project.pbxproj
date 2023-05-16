@@ -17,6 +17,14 @@
 		3AFC1820281512170034C3D9 /* CpmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFC181F281512170034C3D9 /* CpmViewModel.swift */; };
 		3AFC18222816841A0034C3D9 /* ActivitySoft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFC18212816841A0034C3D9 /* ActivitySoft.swift */; };
 		3AFC18242816F4FD0034C3D9 /* CpmResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFC18232816F4FD0034C3D9 /* CpmResultView.swift */; };
+		66C478A62A2DE32B00D71A03 /* Criteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C478A52A2DE32B00D71A03 /* Criteria.swift */; };
+		66C478A82A2DE36200D71A03 /* CriteriaInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C478A72A2DE36200D71A03 /* CriteriaInformation.swift */; };
+		66C478AA2A2DE3C000D71A03 /* Criterias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C478A92A2DE3C000D71A03 /* Criterias.swift */; };
+		66C478AD2A2DE49600D71A03 /* WeatherAvailabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C478AC2A2DE49600D71A03 /* WeatherAvailabilityView.swift */; };
+		66C478AF2A2DE4BC00D71A03 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C478AE2A2DE4BC00D71A03 /* Weather.swift */; };
+		66C478B12A2DE4CC00D71A03 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C478B02A2DE4CC00D71A03 /* WeatherInformation.swift */; };
+		66C478B32A2DE55500D71A03 /* WeatherAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C478B22A2DE55500D71A03 /* WeatherAvailability.swift */; };
+		E63F3DD82A275875005C6BB2 /* criterias.json in Resources */ = {isa = PBXBuildFile; fileRef = E63F3DD72A275875005C6BB2 /* criterias.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +39,14 @@
 		3AFC181F281512170034C3D9 /* CpmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpmViewModel.swift; sourceTree = "<group>"; };
 		3AFC18212816841A0034C3D9 /* ActivitySoft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySoft.swift; sourceTree = "<group>"; };
 		3AFC18232816F4FD0034C3D9 /* CpmResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpmResultView.swift; sourceTree = "<group>"; };
+		66C478A52A2DE32B00D71A03 /* Criteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criteria.swift; sourceTree = "<group>"; };
+		66C478A72A2DE36200D71A03 /* CriteriaInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaInformation.swift; sourceTree = "<group>"; };
+		66C478A92A2DE3C000D71A03 /* Criterias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criterias.swift; sourceTree = "<group>"; };
+		66C478AC2A2DE49600D71A03 /* WeatherAvailabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAvailabilityView.swift; sourceTree = "<group>"; };
+		66C478AE2A2DE4BC00D71A03 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		66C478B02A2DE4CC00D71A03 /* WeatherInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInformation.swift; sourceTree = "<group>"; };
+		66C478B22A2DE55500D71A03 /* WeatherAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAvailability.swift; sourceTree = "<group>"; };
+		E63F3DD72A275875005C6BB2 /* criterias.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = criterias.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +65,7 @@
 			children = (
 				3AFC181B2814C4DD0034C3D9 /* Activity+CoreDataClass.swift */,
 				3AFC181C2814C4DD0034C3D9 /* Activity+CoreDataProperties.swift */,
+				3AFC18212816841A0034C3D9 /* ActivitySoft.swift */,
 				3AFC17EB2812C6BF0034C3D9 /* CpmAnalysis */,
 				3AFC17EA2812C6BF0034C3D9 /* Products */,
 			);
@@ -68,11 +85,13 @@
 				3AFC17EC2812C6BF0034C3D9 /* CpmAnalysisApp.swift */,
 				3AFC18232816F4FD0034C3D9 /* CpmResultView.swift */,
 				3AFC17EE2812C6BF0034C3D9 /* ContentView.swift */,
+				66C478AC2A2DE49600D71A03 /* WeatherAvailabilityView.swift */,
 				3AFC17F02812C6C00034C3D9 /* Assets.xcassets */,
 				3AFC17F22812C6C00034C3D9 /* Preview Content */,
 				3AFC17FC2812C93E0034C3D9 /* Activity.xcdatamodeld */,
 				3AFC181F281512170034C3D9 /* CpmViewModel.swift */,
-				3AFC18212816841A0034C3D9 /* ActivitySoft.swift */,
+				66C478A42A2DE2CB00D71A03 /* Criteria */,
+				66C478AB2A2DE44600D71A03 /* Weather */,
 			);
 			path = CpmAnalysis;
 			sourceTree = "<group>";
@@ -83,6 +102,27 @@
 				3AFC17F32812C6C00034C3D9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		66C478A42A2DE2CB00D71A03 /* Criteria */ = {
+			isa = PBXGroup;
+			children = (
+				E63F3DD72A275875005C6BB2 /* criterias.json */,
+				66C478A52A2DE32B00D71A03 /* Criteria.swift */,
+				66C478A92A2DE3C000D71A03 /* Criterias.swift */,
+				66C478A72A2DE36200D71A03 /* CriteriaInformation.swift */,
+			);
+			path = Criteria;
+			sourceTree = "<group>";
+		};
+		66C478AB2A2DE44600D71A03 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				66C478AE2A2DE4BC00D71A03 /* Weather.swift */,
+				66C478B02A2DE4CC00D71A03 /* WeatherInformation.swift */,
+				66C478B22A2DE55500D71A03 /* WeatherAvailability.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E63F3DD82A275875005C6BB2 /* criterias.json in Resources */,
 				3AFC17F42812C6C00034C3D9 /* Preview Assets.xcassets in Resources */,
 				3AFC17F12812C6C00034C3D9 /* Assets.xcassets in Resources */,
 			);
@@ -156,11 +197,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AFC18242816F4FD0034C3D9 /* CpmResultView.swift in Sources */,
+				66C478A82A2DE36200D71A03 /* CriteriaInformation.swift in Sources */,
+				66C478AD2A2DE49600D71A03 /* WeatherAvailabilityView.swift in Sources */,
 				3AFC181D2814C4DD0034C3D9 /* Activity+CoreDataClass.swift in Sources */,
 				3AFC181E2814C4DD0034C3D9 /* Activity+CoreDataProperties.swift in Sources */,
 				3AFC18222816841A0034C3D9 /* ActivitySoft.swift in Sources */,
+				66C478AA2A2DE3C000D71A03 /* Criterias.swift in Sources */,
 				3AFC17EF2812C6BF0034C3D9 /* ContentView.swift in Sources */,
+				66C478AF2A2DE4BC00D71A03 /* Weather.swift in Sources */,
+				66C478B12A2DE4CC00D71A03 /* WeatherInformation.swift in Sources */,
+				66C478B32A2DE55500D71A03 /* WeatherAvailability.swift in Sources */,
 				3AFC1820281512170034C3D9 /* CpmViewModel.swift in Sources */,
+				66C478A62A2DE32B00D71A03 /* Criteria.swift in Sources */,
 				3AFC17FE2812C93E0034C3D9 /* Activity.xcdatamodeld in Sources */,
 				3AFC17ED2812C6BF0034C3D9 /* CpmAnalysisApp.swift in Sources */,
 			);
@@ -301,6 +349,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,6 +379,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

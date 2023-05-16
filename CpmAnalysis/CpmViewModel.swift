@@ -35,7 +35,7 @@ class CpmViewModel: ObservableObject {
             project.schedules.removeAll()
             var initialSchedule = [ActivitySoft]()
             for activity in savedActivities {
-                initialSchedule.append(ActivitySoft(id: activity.id, description: activity.name ?? "", duration: activity.duration, predecessors: activity.predecessors ?? [], sucessors: activity.successors ?? []))
+                initialSchedule.append(ActivitySoft(id: activity.id, description: activity.atype ?? "", duration: activity.duration, predecessors: activity.predecessors ?? [], sucessors: activity.successors ?? []))
             }
             project.schedules.append(Schedule(schedule: initialSchedule))
             
@@ -45,13 +45,13 @@ class CpmViewModel: ObservableObject {
     }
     
     func addActivity(id: Int32,
-                     name: String,
+                     atype: String,
                      duration: Int32,
                      predecessors: [Int32],
                      successors: [Int32]) {
         let newActivity = Activity(context: container.viewContext)
         newActivity.id = id
-        newActivity.name = name
+        newActivity.atype = atype
         newActivity.duration = duration
         newActivity.predecessors = predecessors
         newActivity.successors = successors

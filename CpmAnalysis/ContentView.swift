@@ -2,42 +2,46 @@
 //  ContentView.swift
 //  CpmAnalysis
 //
-//  Created by 김형관 on 2022/04/22.
-//
+
 
 import SwiftUI
 
 struct ContentView: View {
-    
+
     @EnvironmentObject var vm : CpmViewModel
-    
+
     @State  var startDate: Int32 = 1
     @State var startDateText: String = "1"
     @State var idText: String = ""
-    @State var nameText: String = ""
+    @State var atypeText: String = ""
     @State var durationText: String = ""
     @State var predecessorsText: String = ""
     @State var successorsText: String = ""
     
+    
+    @State private var showSchedule = false
+    var weatherConsideredSchedule: [String: [String]] = [:]
+
+
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
                 startDateTextSection
                 idTextSection
-                nameTextSection
+                atypeTextSection
                 durationTextSection
                 predecessorsTextSection
                 successorsTextSection
-                
+
                 HStack {
-                    
+
                     Button {
                         var tempPredecessors : [Int32] = []
                         var tempSuccessors : [Int32] = []
-                        
+
                         guard !idText.isEmpty,
                               !durationText.isEmpty else {return}
-                        
+
                         if !predecessorsText.isEmpty {
                             let tempString = predecessorsText
                             let stringArray = tempString.split(separator: " ")
@@ -58,22 +62,22 @@ struct ContentView: View {
                                 tempSuccessors.append(temp)
                             }
                         }
-                        
+
                         if let idTemp = Int32(idText) {
                             if let temp = vm.savedActivities.first(where: {$0.id == idTemp}) {
-                                temp.name = nameText
+                                temp.atype = atypeText
                                 temp.duration = Int32(durationText) ?? 0
                                 temp.predecessors = tempPredecessors
                                 temp.successors = tempSuccessors
                             } else {
                                 vm.addActivity(id: Int32(idText) ?? 0,
-                                               name: nameText,
+                                               atype: atypeText,
                                                duration: Int32(durationText) ?? 0,
                                                predecessors: tempPredecessors,
                                                successors: tempSuccessors)
                             }
                         }
-                        
+
                     } label: {
                         Text("Save")
                             .font(.headline)
@@ -82,14 +86,14 @@ struct ContentView: View {
                             .frame(maxWidth: .infinity)
                             .background(Color.pink)
                             .cornerRadius(10)
-                        
+
                     }
                     .padding(.horizontal)
-                    
+
                     NavigationLink(destination:
-                                    CpmResultView()
+                                    CpmResultView(atypes: vm.savedActivities.compactMap { $0.atype })
                                     .environmentObject(vm)
-                                   
+
                     ) {
                         Text("Schedule Calculate")
                             .font(.headline)
@@ -105,17 +109,24 @@ struct ContentView: View {
                         vm.project.scheduleCalculation(startDate: startDate)
                         startDateText = String(startDate)
                     })
+                    NavigationLink("",destination: WeatherAvailabilityView(), isActive: $showSchedule)
+                                                       Button(action: {
+                                                           showSchedule.toggle()
+                                                       }) {
+                                                           Text("Weather availablility")
+                                                       }
+                                                       .padding()
                 }
-  
+
                 List {
                     ForEach(vm.savedActivities) { activity in
                         Text("Activity id \(activity.id)")
                             .onTapGesture {
-                                
+
                                 idText = String(activity.id)
-                                nameText = activity.name ?? ""
+                                atypeText = activity.atype ?? ""
                                 durationText = String(activity.duration)
-                                
+
                                 if let tempPredecessors = activity.predecessors {
                                     var tempStringPred = String()
                                     for predecessor in tempPredecessors {
@@ -123,7 +134,7 @@ struct ContentView: View {
                                     }
                                     predecessorsText = tempStringPred
                                 }
-                                
+
                                 if let tempSuccessors = activity.successors {
                                     var tempStringSucc = String()
                                     for successor in tempSuccessors {
@@ -131,7 +142,7 @@ struct ContentView: View {
                                     }
                                     successorsText = tempStringSucc
                                 }
-                                
+
                             }
                     }
                     .onDelete(perform: vm.deleteActivity)
@@ -141,11 +152,11 @@ struct ContentView: View {
         }
         .navigationTitle("Activity")
     }
-  
+
     private var startDateTextSection: some View {
         HStack {
             Text("Start Date")
-            
+
             TextField("start date", text: $startDateText)
                 .font(.headline)
                 .frame(height: 55)
@@ -156,7 +167,7 @@ struct ContentView: View {
         }
 
     }
-    
+
     private var idTextSection: some View {
         TextField("id number", text: $idText)
             .font(.headline)
@@ -166,9 +177,9 @@ struct ContentView: View {
             .padding(.horizontal)
             .padding(.leading)
     }
-    
-    private var nameTextSection: some View {
-        TextField("name", text: $nameText)
+
+    private var atypeTextSection: some View {
+        TextField("type", text: $atypeText)
             .font(.headline)
             .frame(height: 55)
             .background(Color.white)
@@ -176,7 +187,7 @@ struct ContentView: View {
             .padding(.horizontal)
             .padding(.leading)
     }
-    
+
     private var durationTextSection: some View {
         TextField("duration", text: $durationText)
             .font(.headline)
@@ -186,7 +197,7 @@ struct ContentView: View {
             .padding(.horizontal)
             .padding(.leading)
     }
-    
+
     private var predecessorsTextSection: some View {
         TextField("predecessors", text: $predecessorsText)
             .font(.headline)
@@ -195,9 +206,9 @@ struct ContentView: View {
             .cornerRadius(20)
             .padding(.horizontal)
             .padding(.leading)
-        
+
     }
-    
+
     private var successorsTextSection: some View {
         TextField("successors", text: $successorsText)
             .font(.headline)
@@ -207,12 +218,8 @@ struct ContentView: View {
             .padding(.horizontal)
             .padding(.leading)
     }
-    
+
 }
 
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+
